@@ -1,0 +1,66 @@
+<template>
+	<safe-area class="page">
+		<view class="header">
+			<text class="title">首页</text>
+		</view>
+		<view class="body">
+			<text class="h1">Hello , APICloud</text>
+			<img class="img" src="../../image/img.png" />
+			<text class="p">拖入组件搭建你的第一个 APP</text>
+		</view>
+	</safe-area>
+</template>
+<script>
+export default {
+	name: 'main',
+	apiready() { },
+	data() {
+		return {
+			msg: "Hello APICloud"
+		};
+	},
+	methods: {}
+};
+</script>
+<style>
+.page {
+	height: 100%;
+	background: #fff;
+}
+
+.header {
+	height: 44px;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+
+.body {
+	background: #f5f6f7;
+	flex: 1;
+}
+
+.h1 {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	margin: 50px;
+}
+
+.img {
+	max-width: 100%;
+}
+
+.p {
+	color: #aaa;
+	text-align: center;
+	font-size: 16px;
+	margin: 15px;
+}
+</style>

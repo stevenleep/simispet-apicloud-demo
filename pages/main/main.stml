@@ -1,0 +1,71 @@
+<template>
+	<tab-layout title="标题栏" :frames="tabLayoutFrames" hideNavigationBar={false} hideTabBar={false}
+		:rightButtons="tabLayoutRightButtons" :list="tabLayoutList" :leftButtons="tabLayoutLeftButtons" />
+</template>
+<script>
+import '../../components/tab-layout';
+export default {
+	name: "tpl",
+	apiready() { },
+	data() {
+		return {
+			tabLayoutFrames: [{
+				"title": "页面一",
+				"name": "page1",
+				"url": "widget://pages/demo/demo.stml"
+			}, {
+				"title": "页面二",
+				"name": "page2",
+				"url": "widget://pages/demo/demo.stml"
+			}, {
+				"title": "页面三",
+				"name": "page3",
+				"url": "widget://pages/demo/demo.stml"
+			}],
+			tabLayoutRightButtons: [{
+				text: "",
+				color: "#000",
+				fontSize: 17,
+				fontWeight: "normal",
+				iconPath: "../../image/more.png",
+				scale: 4
+			}],
+			tabLayoutList: [{
+				text: "主页",
+				iconPath: "../../image/tabbar/home.png",
+				selectedIconPath: "../../image/tabbar/home_selected.png"
+			}, {
+				text: "分类",
+				iconPath: "../../image/tabbar/category.png",
+				selectedIconPath: "../../image/tabbar/category_selected.png"
+			}, {
+				text: "我的",
+				iconPath: "../../image/tabbar/user.png",
+				selectedIconPath: "../../image/tabbar/user_selected.png"
+			}],
+			tabLayoutLeftButtons: [{
+				text: "返回",
+				color: "#000",
+				fontSize: 17,
+				fontWeight: "normal",
+				iconPath: "../../image/back.png",
+				scale: 4
+			}]
+		};
+	},
+	methods: {
+		handleClick(e) {
+			api.toast({
+				msg: this.data.text,
+				location: "middle"
+			});
+		}
+	}
+};
+</script>
+<style>
+.page {
+	height: 100%;
+	background-color: white;
+}
+</style>
